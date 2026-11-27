@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102b46">
+  <meta name="description" content="AMANBERSAMA membantu mengenali indikasi penipuan digital dan meningkatkan keamanan aktivitas online.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; script-src 'self'; style-src 'self' https://cdn.jsdelivr.net; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self'; frame-src 'none'; media-src 'none'; upgrade-insecure-requests">
+  <title>AMANBERSAMA — Keamanan Digital untuk Semua</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Navigasi utama">
+      <a class="brand" href="#dashboard" data-page-link="dashboard" aria-label="AMANBERSAMA, ke dashboard">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48" role="img"><path d="M24 4 40 10v12c0 10-6.8 17.4-16 22C14.8 39.4 8 32 8 22V10L24 4Z" fill="currentColor" opacity=".18"/><path d="M24 4 40 10v12c0 10-6.8 17.4-16 22C14.8 39.4 8 32 8 22V10L24 4Z" fill="none" stroke="currentColor" stroke-width="2.8"/><path d="m17 23 4.5 4.5L31.5 17" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="brand-copy"><strong>aman<span>bersama</span></strong><small>Digital Safety Platform</small></span>
+      </a>
+
+      <div class="nav-label">WORKSPACE</div>
+      <nav class="side-nav">
+        <button class="nav-item active" type="button" data-page="dashboard"><span class="nav-icon">⌂</span><span>Dashboard</span></button>
+        <button class="nav-item" type="button" data-page="message"><span class="nav-icon">▤</span><span>Deteksi Pesan Scam</span><span class="nav-dot"></span></button>
+        <button class="nav-item" type="button" data-page="link"><span class="nav-icon">↗</span><span>Link Scanner</span></button>
+        <button class="nav-item" type="button" data-page="file"><span class="nav-icon">▧</span><span>File Scanner</span></button>
+        <button class="nav-item" type="button" data-page="number"><span class="nav-icon">⌕</span><span>Cek Nomor & Rekening</span></button>
+      </nav>
+
+      <div class="nav-label nav-label-spaced">KOMUNITAS & BELAJAR</div>
+      <nav class="side-nav">
+        <button class="nav-item" type="button" data-page="reports"><span class="nav-icon">◎</span><span>Laporan Komunitas</span></button>
+        <button class="nav-item" type="button" data-page="education"><span class="nav-icon">▱</span><span>Edukasi Digital</span></button>
+        <button class="nav-item" type="button" data-page="history"><span class="nav-icon">◷</span><span>Riwayat Pemeriksaan</span></button>
+      </nav>
+
+      <div class="sidebar-spacer"></div>
+      <div class="sidebar-safety-card">
+        <div class="safety-card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 20 6v5.5c0 5-3.4 8.7-8 10.5-4.6-1.8-8-5.5-8-10.5V6l8-3Z"/><path d="m8.5 12 2.2 2.2 4.8-4.8"/></svg></div>
+        <strong>Jaga data pribadimu</strong>
+        <p>Jangan pernah membagikan OTP, PIN, atau kata sandi kepada siapa pun.</p>
+        <button type="button" class="text-link" data-page="education">Pelajari tips aman <span>→</span></button>
+      </div>
+      <div class="sidebar-user">
+        <div class="user-avatar">A</div>
+        <div class="user-meta"><strong>Pengguna Aman</strong><span>Akun pengunjung</span></div>
+        <span class="user-menu" aria-hidden="true">···</span>
+      </div>
+    </aside>
+
+    <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+    <div class="main-column">
+      <header class="topbar">
+        <button class="mobile-menu icon-button" id="menu-toggle" type="button" aria-label="Buka navigasi" aria-expanded="false"><span></span><span></span><span></span></button>
+        <div class="breadcrumb"><span>AMANBERSAMA</span><i>/</i><strong id="breadcrumb-current">Dashboard</strong></div>
+        <div class="topbar-actions">
+          <label class="global-search"><span aria-hidden="true">⌕</span><input id="global-search" type="search" placeholder="Cari riwayat pemeriksaan..." aria-label="Cari riwayat pemeriksaan"><kbd>⌘ K</kbd></label>
+          <button class="icon-button notification-button" id="notification-button" type="button" aria-label="Notifikasi"><span>♧</span><i></i></button>
+          <div class="topbar-divider"></div>
+          <div class="top-user"><div class="user-avatar small-avatar">A</div><div><strong>Pengguna</strong><span>Mode demo</span></div><span class="chevron">⌄</span></div>
+        </div>
+      </header>
+
+      <main class="main-content" id="main-content">
+        <section class="page-view active" data-view="dashboard" aria-labelledby="dashboard-title">
+          <div class="page-heading dashboard-heading">
+            <div><div class="eyebrow"><span class="eyebrow-dot"></span> RUANG KENDALI KEAMANAN DIGITAL</div><h1 id="dashboard-title">Selamat datang, tetap <span>aman.</span></h1><p>Pantau aktivitas dan periksa hal mencurigakan sebelum kamu mengeklik, mengunduh, atau membagikannya.</p></div>
+            <div class="date-chip"><span class="date-icon">▦</span><span id="today-label">Hari ini</span></div>
+          </div>
+
+          <section class="hero-banner" aria-label="Perlindungan digital">
+            <div class="hero-orb orb-one"></div><div class="hero-orb orb-two"></div>
+            <div class="hero-copy"><div class="hero-pill"><span class="pulse-dot"></span> PERLINDUNGAN DIGITAL DIMULAI DARI SINI</div><h2>Berhenti sejenak.<br><em>Periksa sebelum percaya.</em></h2><p>Kenali tanda-tanda penipuan digital dengan langkah pemeriksaan yang mudah dipahami.</p><div class="hero-actions"><button type="button" class="button button-white" data-page="message">Periksa pesan sekarang <span>→</span></button><button type="button" class="button button-ghost" data-page="link">Pindai tautan</button></div></div>
+            <div class="hero-art" aria-hidden="true"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="shield-illustration"><svg viewBox="0 0 160 180"><path d="M80 8 137 29v43c0 42-24 75-57 96C47 147 23 114 23 72V29L80 8Z" fill="#dbeafe" opacity=".13"/><path d="M80 8 137 29v43c0 42-24 75-57 96C47 147 23 114 23 72V29L80 8Z" fill="none" stroke="#dbeafe" stroke-width="4"/><path d="m52 83 18 18 39-42" fill="none" stroke="#86efac" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="floating-chip chip-top"><span class="chip-check">✓</span><span><b>Privasi prioritas</b><small>Jaga informasi pribadi</small></span></div><div class="floating-chip chip-bottom"><span class="chip-lock">⌑</span><span><b>Lebih waspada</b><small>Kenali ancaman digital</small></span></div></div>
+          </section>
+
+          <div class="stats-grid" aria-label="Ringkasan aktivitas">
+            <article class="stat-card"><div class="stat-top"><span>Total pemeriksaan</span><span class="stat-icon blue-icon">⌕</span></div><strong class="stat-value" id="stat-total">0</strong><div class="stat-foot"><span class="stat-neutral">Aktivitas tersimpan</span><span class="stat-period">Semua waktu</span></div></article>
+            <article class="stat-card"><div class="stat-top"><span>Ancaman terindikasi</span><span class="stat-icon red-icon">⚑</span></div><strong class="stat-value" id="stat-threats">0</strong><div class="stat-foot"><span class="stat-neutral">Perlu perhatian</span><span class="stat-period">Skor ≥ 60</span></div></article>
+            <article class="stat-card"><div class="stat-top"><span>Laporan komunitas</span><span class="stat-icon green-icon">◎</span></div><strong class="stat-value" id="stat-reports">0</strong><div class="stat-foot"><span class="stat-positive">Berkontribusi bersama</span><span class="stat-period">Di perangkat ini</span></div></article>
+            <article class="stat-card"><div class="stat-top"><span>Skor kewaspadaan</span><span class="stat-icon violet-icon">✧</span></div><strong class="stat-value" id="stat-awareness">100<span class="stat-suffix">/100</span></strong><div class="stat-foot"><span class="stat-positive">Tetap waspada!</span><span class="stat-period">Indikator demo</span></div></article>
+          </div>
+
+          <div class="dashboard-grid">
+            <section class="panel quick-panel"><div class="panel-heading"><div><h3>Mulai pemeriksaan</h3><p>Pilih apa yang ingin kamu periksa hari ini.</p></div><span class="heading-mark">✦</span></div><div class="quick-grid">
+              <button class="quick-action" type="button" data-page="message"><span class="quick-icon quick-blue">▤</span><span><b>Pesan scam</b><small>Periksa SMS & chat</small></span><i>→</i></button>
+              <button class="quick-action" type="button" data-page="link"><span class="quick-icon quick-purple">↗</span><span><b>Link scanner</b><small>Periksa URL mencurigakan</small></span><i>→</i></button>
+              <button class="quick-action" type="button" data-page="file"><span class="quick-icon quick-orange">▧</span><span><b>File scanner</b><small>Periksa file sebelum dibuka</small></span><i>→</i></button>
+              <button class="quick-action" type="button" data-page="number"><span class="quick-icon quick-green">⌕</span><span><b>Cek nomor</b><small>Nomor & rekening</small></span><i>→</i></button>
+            </div></section>
+            <section class="panel activity-panel"><div class="panel-heading"><div><h3>Aktivitas terbaru</h3><p>Ringkasan pemeriksaan di perangkat ini.</p></div><button type="button" class="panel-link" data-page="history">Lihat semua <span>→</span></button></div><div id="dashboard-activity" class="activity-list"><div class="empty-state compact-empty"><span class="empty-icon">◷</span><b>Belum ada aktivitas</b><p>Hasil pemeriksaanmu akan muncul di sini.</p></div></div></section>
+          </div>
+          <section class="tip-banner"><div class="tip-icon">✦</div><div><span>TIP KEAMANAN HARI INI</span><h3>OTP adalah rahasia, bukan untuk dibagikan.</h3><p>Bank, marketplace, dan layanan resmi tidak akan meminta kode OTP atau PIN melalui chat atau telepon.</p></div><button type="button" class="tip-arrow" data-page="education" aria-label="Buka edukasi">→</button></section>
+          <p class="demo-disclaimer"><span>ⓘ</span> Dashboard ini berjalan dalam mode demo lokal. Angka dan hasil pemeriksaan berasal dari aktivitas pada browser ini, bukan pemantauan keamanan server secara real-time.</p>
+        </section>
+
+        <section class="page-view" data-view="message" aria-labelledby="message-title" hidden>
+          <div class="page-heading"><div><div class="eyebrow">ALAT PEMERIKSAAN</div><h1 id="message-title">Deteksi <span>Pesan Scam</span></h1><p>Tempel pesan yang kamu terima untuk mengenali pola penipuan, tekanan psikologis, dan permintaan data sensitif.</p></div><span class="heading-illustration blue-illustration">▤</span></div>
+          <div class="tool-layout"><section class="panel tool-panel"><div class="tool-step"><span>01</span><div><h3>Masukkan isi pesan</h3><p>Jangan sertakan OTP, PIN, kata sandi, atau data pribadi yang masih aktif.</p></div></div>
+            <form id="message-form" class="tool-form"><label for="message-channel">Sumber pesan</label><select id="message-channel"><option>WhatsApp</option><option>SMS</option><option>Telegram</option><option>Email</option><option>Lainnya</option></select><label for="message-input">Isi pesan yang ingin diperiksa</label><textarea id="message-input" rows="7" maxlength="5000" placeholder="Contoh: Selamat! Anda memenangkan hadiah. Klik tautan berikut dan kirim kode OTP untuk klaim hadiah..." required></textarea><div class="field-helper"><span>Hindari memasukkan data rahasia.</span><span id="message-count">0 / 5000</span></div><button class="button button-primary full-button" type="submit"><span>✧</span> Analisis pesan <span class="button-arrow">→</span></button></form>
+          </section><aside class="panel side-info-panel"><div class="info-badge">APA YANG DIPERIKSA?</div><h3>Kenali tanda-tanda pesan berbahaya</h3><ul class="check-list"><li><span>✓</span> Hadiah atau undian yang tidak diikuti</li><li><span>✓</span> Permintaan OTP, PIN, atau password</li><li><span>✓</span> Desakan transfer uang segera</li><li><span>✓</span> Ancaman akun diblokir atau ditutup</li><li><span>✓</span> Tautan dan identitas pengirim mencurigakan</li></ul><div class="privacy-note"><span>♧</span><p>Analisis demo dilakukan di browser. Teks tidak dikirim ke server oleh aplikasi ini.</p></div></aside></div>
+          <section class="panel result-panel" id="message-result" hidden aria-live="polite"><div class="result-header"><div><div class="eyebrow">HASIL PEMERIKSAAN</div><h3>Analisis pola pesan</h3></div><span class="result-time" id="message-result-time">Baru saja</span></div><div class="result-body" id="message-result-body"></div></section>
+        </section>
+
+        <section class="page-view" data-view="link" aria-labelledby="link-title" hidden>
+          <div class="page-heading"><div><div class="eyebrow">ALAT PEMERIKSAAN</div><h1 id="link-title">Link <span>Scanner</span></h1><p>Periksa struktur URL dan indikasi phishing sebelum membuka tautan dari pesan, email, atau media sosial.</p></div><span class="heading-illustration purple-illustration">↗</span></div>
+          <div class="tool-layout"><section class="panel tool-panel"><div class="tool-step"><span>02</span><div><h3>Masukkan tautan</h3><p>Salin URL lengkap, termasuk https:// jika tersedia.</p></div></div><form id="link-form" class="tool-form"><label for="link-input">URL yang ingin diperiksa</label><div class="input-with-icon"><span>↗</span><input id="link-input" type="url" inputmode="url" placeholder="https://contoh-domain.com" required maxlength="2048"></div><div class="field-helper"><span>Jangan membuka tautan untuk mengujinya.</span><span>URL saja</span></div><button class="button button-primary full-button" type="submit"><span>⌕</span> Periksa keamanan link <span class="button-arrow">→</span></button></form></section><aside class="panel side-info-panel"><div class="info-badge">PERIKSA SEBELUM KLIK</div><h3>URL bisa terlihat resmi, tetapi...</h3><ul class="check-list"><li><span>✓</span> Ejaan domain dapat dibuat mirip</li><li><span>✓</span> Subdomain dapat mengecoh</li><li><span>✓</span> Tautan pendek menyembunyikan tujuan</li><li><span>✓</span> HTTPS tidak menjamin situs tepercaya</li></ul><div class="privacy-note"><span>ⓘ</span><p>Pemeriksaan lokal tidak mengakses reputasi domain atau daftar phishing real-time.</p></div></aside></div>
+          <section class="panel result-panel" id="link-result" hidden aria-live="polite"><div class="result-header"><div><div class="eyebrow">HASIL PEMERIKSAAN</div><h3>Analisis struktur URL</h3></div><span class="result-time" id="link-result-time">Baru saja</span></div><div class="result-body" id="link-result-body"></div></section>
+        </section>
+
+        <section class="page-view" data-view="file" aria-labelledby="file-title" hidden>
+          <div class="page-heading"><div><div class="eyebrow">ALAT PEMERIKSAAN</div><h1 id="file-title">File <span>Scanner</span></h1><p>Periksa informasi dasar file dan buat hash SHA-256 di perangkat sebelum memutuskan untuk membukanya.</p></div><span class="heading-illustration orange-illustration">▧</span></div>
+          <div class="tool-layout"><section class="panel tool-panel"><div class="tool-step"><span>03</span><div><h3>Pilih file untuk diperiksa</h3><p>File tidak akan diunggah oleh demo ini.</p></div></div><form id="file-form" class="tool-form"><label class="drop-zone" id="drop-zone" for="file-input"><input id="file-input" type="file" accept=".pdf,.docx,.xlsx,.zip,.apk,.exe,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/zip,application/vnd.android.package-archive,application/vnd.microsoft.portable-executable"><span class="upload-icon">⇧</span><strong id="file-label">Klik untuk memilih file</strong><small>PDF, DOCX, XLSX, ZIP, APK, atau EXE · Maks. 20 MB</small><span class="drop-hint">Pilih satu file dari perangkatmu</span></label><div id="selected-file" class="selected-file" hidden></div><button class="button button-primary full-button" type="submit" id="file-scan-button" disabled><span>⌕</span> Periksa file <span class="button-arrow">→</span></button></form></section><aside class="panel side-info-panel"><div class="info-badge">PENTING</div><h3>Jangan langsung membuka lampiran</h3><ul class="check-list"><li><span>✓</span> Pastikan pengirim dikenal</li><li><span>✓</span> Waspadai file APK dari chat</li><li><span>✓</span> Hindari menjalankan file EXE asing</li><li><span>✓</span> Pindai file dengan antivirus tepercaya</li></ul><div class="privacy-note warning-note"><span>!</span><p>Hash SHA-256 bukan pemindaian malware. Demo ini tidak menjalankan antivirus dan tidak terhubung ke VirusTotal.</p></div></aside></div>
+          <section class="panel result-panel" id="file-result" hidden aria-live="polite"><div class="result-header"><div><div class="eyebrow">HASIL PEMERIKSAAN</div><h3>Informasi file & hash</h3></div><span class="result-time" id="file-result-time">Baru saja</span></div><div class="result-body" id="file-result-body"></div></section>
+        </section>
+
+        <section class="page-view" data-view="number" aria-labelledby="number-title" hidden>
+          <div class="page-heading"><div><div class="eyebrow">PERLINDUNGAN KOMUNITAS</div><h1 id="number-title">Cek Nomor & <span>Rekening</span></h1><p>Cari apakah nomor telepon atau rekening pernah dilaporkan melalui formulir komunitas pada browser ini.</p></div><span class="heading-illustration green-illustration">⌕</span></div>
+          <div class="tool-layout"><section class="panel tool-panel"><div class="tool-step"><span>04</span><div><h3>Cari identitas yang dilaporkan</h3><p>Masukkan nomor tanpa spasi atau tanda baca jika memungkinkan.</p></div></div><form id="number-form" class="tool-form"><label for="number-type">Jenis identitas</label><select id="number-type"><option value="telepon">Nomor telepon</option><option value="rekening">Nomor rekening</option></select><label for="number-input">Nomor yang ingin diperiksa</label><input id="number-input" type="text" inputmode="numeric" placeholder="Masukkan nomor telepon atau rekening" minlength="5" maxlength="30" required><div class="field-helper"><span>Gunakan data yang ingin kamu periksa.</span><span>5–30 karakter</span></div><button class="button button-primary full-button" type="submit"><span>⌕</span> Cari laporan <span class="button-arrow">→</span></button></form></section><aside class="panel side-info-panel"><div class="info-badge">SUMBER DATA</div><h3>Gunakan hasil dengan bijak</h3><ul class="check-list"><li><span>✓</span> Data berasal dari laporan lokal</li><li><span>✓</span> Belum menjadi basis data nasional</li><li><span>✓</span> Kecocokan bukan bukti tindak pidana</li><li><span>✓</span> Konfirmasi melalui kanal resmi</li></ul><div class="privacy-note"><span>♧</span><p>Jangan mengunggah atau menyebarkan data pribadi orang lain tanpa dasar yang sah.</p></div></aside></div>
+          <section class="panel result-panel" id="number-result" hidden aria-live="polite"><div class="result-header"><div><div class="eyebrow">HASIL PENCARIAN KOMUNITAS</div><h3>Catatan laporan</h3></div><span class="result-time" id="number-result-time">Baru saja</span></div><div class="result-body" id="number-result-body"></div></section>
+        </section>
+
+        <section class="page-view" data-view="reports" aria-labelledby="reports-title" hidden>
+          <div class="page-heading"><div><div class="eyebrow">SALING MELINDUNGI</div><h1 id="reports-title">Laporan <span>Komunitas</span></h1><p>Bagikan pengalaman agar pengguna lain lebih waspada. Hindari memasukkan data pribadi atau informasi sensitif.</p></div><span class="heading-illustration green-illustration">◎</span></div>
+          <div class="reports-layout"><section class="panel report-form-panel"><div class="panel-heading"><div><h3>Buat laporan baru</h3><p>Ceritakan indikasi penipuan yang kamu temukan.</p></div><span class="form-number">01</span></div><form id="report-form" class="tool-form"><label for="report-category">Kategori laporan</label><select id="report-category" required><option value="">Pilih kategori</option><option>Phishing / tautan palsu</option><option>Penipuan transaksi</option><option>Penipuan lowongan kerja</option><option>Investasi palsu</option><option>Penipuan hadiah</option><option>Nomor telepon mencurigakan</option><option>Rekening mencurigakan</option><option>Lainnya</option></select><label for="report-target">Nomor, rekening, akun, atau tautan (opsional)</label><input id="report-target" type="text" maxlength="160" placeholder="Jangan masukkan data rahasia"><label for="report-description">Kronologi singkat</label><textarea id="report-description" rows="4" maxlength="1200" placeholder="Jelaskan apa yang terjadi, kapan, dan bagaimana modusnya..." required></textarea><label for="report-evidence">Bukti screenshot (opsional)</label><input class="file-input-simple" id="report-evidence" type="file" accept="image/png,image/jpeg,image/webp"><small class="form-note">File bukti tidak diunggah atau disimpan pada demo ini. Simpan bukti asli dengan aman untuk pelaporan resmi.</small><label class="consent-row"><input id="report-consent" type="checkbox" required><span>Saya memastikan laporan ini dibuat dengan itikad baik dan tidak berisi data rahasia atau tuduhan yang saya ketahui tidak benar.</span></label><button class="button button-primary full-button" type="submit">Kirim laporan <span class="button-arrow">→</span></button></form></section>
+            <section class="panel reports-feed-panel"><div class="panel-heading"><div><h3>Temuan komunitas</h3><p>Daftar laporan yang tersimpan di browser ini.</p></div><span class="live-label"><i></i> LOKAL</span></div><div class="report-filter"><label class="sr-only" for="report-filter-category">Filter kategori laporan</label><select id="report-filter-category"><option value="all">Semua kategori</option><option>Phishing / tautan palsu</option><option>Penipuan transaksi</option><option>Penipuan lowongan kerja</option><option>Investasi palsu</option><option>Penipuan hadiah</option><option>Nomor telepon mencurigakan</option><option>Rekening mencurigakan</option><option>Lainnya</option></select><input id="report-search" type="search" placeholder="Cari laporan..." aria-label="Cari laporan"></div><div id="reports-feed" class="reports-feed"></div></section></div>
+        </section>
+
+        <section class="page-view" data-view="education" aria-labelledby="education-title" hidden>
+          <div class="page-heading"><div><div class="eyebrow">KENALI, CEGAH, LAPORKAN</div><h1 id="education-title">Edukasi <span>Keamanan Digital</span></h1><p>Bekali diri dengan kebiasaan sederhana untuk mengurangi risiko penipuan di internet.</p></div><span class="heading-illustration yellow-illustration">▱</span></div>
+          <div class="education-highlight"><div class="edu-highlight-icon">✦</div><div><span>PANDUAN DASAR</span><h2>Jeda 10 detik bisa melindungi data dan uangmu.</h2><p>Jangan terburu-buru mengikuti instruksi yang membuatmu panik, takut, atau terlalu senang.</p></div><button type="button" class="button button-white" data-article="checklist">Lihat checklist <span>→</span></button></div>
+          <div class="section-title-row"><div><h3>Materi keamanan digital</h3><p>Pilih topik untuk membaca panduan singkat.</p></div><span class="material-count">06 MATERI</span></div>
+          <div class="education-grid" id="education-grid">
+            <article class="education-card"><div class="edu-card-art art-phishing"><span>↗</span><i></i><b></b></div><div class="edu-card-content"><div class="article-meta"><span>PHISHING</span><small>4 menit baca</small></div><h3>Kenali tautan phishing sebelum kamu klik</h3><p>Perhatikan domain, ejaan, dan halaman login palsu.</p><button type="button" data-article="phishing" class="read-link">Baca panduan <span>→</span></button></div></article>
+            <article class="education-card"><div class="edu-card-art art-whatsapp"><span>◌</span><i></i><b></b></div><div class="edu-card-content"><div class="article-meta"><span>WHATSAPP</span><small>3 menit baca</small></div><h3>Modus penipuan melalui pesan WhatsApp</h3><p>Waspadai APK, undian palsu, dan permintaan kode.</p><button type="button" data-article="whatsapp" class="read-link">Baca panduan <span>→</span></button></div></article>
+            <article class="education-card"><div class="edu-card-art art-market"><span>▣</span><i></i><b></b></div><div class="edu-card-content"><div class="article-meta"><span>MARKETPLACE</span><small>4 menit baca</small></div><h3>Belanja online dengan transaksi lebih aman</h3><p>Hindari pembayaran di luar platform resmi.</p><button type="button" data-article="marketplace" class="read-link">Baca panduan <span>→</span></button></div></article>
+            <article class="education-card"><div class="edu-card-art art-invest"><span>⌁</span><i></i><b></b></div><div class="edu-card-content"><div class="article-meta"><span>INVESTASI</span><small>5 menit baca</small></div><h3>Waspada janji keuntungan investasi pasti</h3><p>Kenali iming-iming profit tinggi tanpa risiko.</p><button type="button" data-article="investasi" class="read-link">Baca panduan <span>→</span></button></div></article>
+            <article class="education-card"><div class="edu-card-art art-job"><span>▤</span><i></i><b></b></div><div class="edu-card-content"><div class="article-meta"><span>LOWONGAN KERJA</span><small>3 menit baca</small></div><h3>Periksa lowongan kerja sebelum mengirim uang</h3><p>Rekrutmen resmi tidak meminta biaya proses.</p><button type="button" data-article="lowongan" class="read-link">Baca panduan <span>→</span></button></div></article>
+            <article class="education-card"><div class="edu-card-art art-account"><span>♧</span><i></i><b></b></div><div class="edu-card-content"><div class="article-meta"><span>KEAMANAN AKUN</span><small>4 menit baca</small></div><h3>Lindungi akun dengan kebiasaan yang benar</h3><p>Gunakan kata sandi unik dan autentikasi berlapis.</p><button type="button" data-article="akun" class="read-link">Baca panduan <span>→</span></button></div></article>
+          </div>
+        </section>
+
+        <section class="page-view" data-view="history" aria-labelledby="history-title" hidden>
+          <div class="page-heading"><div><div class="eyebrow">CATATAN AKTIVITAS</div><h1 id="history-title">Riwayat <span>Pemeriksaan</span></h1><p>Lihat hasil pemeriksaan yang tersimpan pada browser ini. Data dapat dihapus kapan saja.</p></div><button type="button" class="button button-outline" id="clear-history-button">Hapus riwayat</button></div>
+          <section class="panel history-panel"><div class="history-toolbar"><div class="history-filters"><label class="sr-only" for="history-type">Filter tipe pemeriksaan</label><select id="history-type"><option value="all">Semua pemeriksaan</option><option value="message">Pesan scam</option><option value="link">Link scanner</option><option value="file">File scanner</option><option value="number">Nomor & rekening</option></select><label class="sr-only" for="history-risk">Filter tingkat risiko</label><select id="history-risk"><option value="all">Semua risiko</option><option value="high">Tinggi</option><option value="medium">Sedang</option><option value="low">Rendah</option></select></div><label class="history-search"><span>⌕</span><input id="history-search" type="search" placeholder="Cari aktivitas..." aria-label="Cari aktivitas"></label></div><div class="history-table-wrap"><table class="history-table"><thead><tr><th>JENIS PEMERIKSAAN</th><th>OBJEK</th><th>RISIKO</th><th>SKOR</th><th>WAKTU</th><th></th></tr></thead><tbody id="history-table-body"><tr><td colspan="6"><div class="empty-state"><span class="empty-icon">◷</span><b>Belum ada riwayat pemeriksaan</b><p>Mulai pemeriksaan untuk melihat catatan di halaman ini.</p></div></td></tr></tbody></table></div><div class="history-footer"><span id="history-count">Menampilkan 0 aktivitas</span><span>Disimpan lokal pada browser ini</span></div></section>
+        </section>
+
+        <footer class="app-footer"><span>© <span id="footer-year">2026</span> AMANBERSAMA</span><span>Dibuat untuk membantu kita lebih waspada di ruang digital.</span><span class="footer-status"><i></i> Mode demo lokal</span></footer>
+      </main>
+    </div>
+  </div>
+
+  <div class="toast-region" id="toast-region" role="status" aria-live="polite" aria-atomic="true"></div>
+  <div class="modal-backdrop" id="modal-backdrop" hidden>
+    <section class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-description">
+      <button type="button" class="modal-close" id="modal-close" aria-label="Tutup dialog">×</button>
+      <div class="modal-symbol" id="modal-symbol">✦</div><div class="eyebrow" id="modal-eyebrow">PANDUAN KEAMANAN</div><h2 id="modal-title">Informasi</h2><div id="modal-description" class="modal-description"></div><div class="modal-actions" id="modal-actions"><button type="button" class="button button-primary" id="modal-ok">Mengerti</button></div>
+    </section>
+  </div>
+</body>
+</html>
